@@ -4,9 +4,9 @@ on: [push]
 jobs:
   Create-MyBinderOrg-Cache:
     runs-on: ubuntu-latest
+    working-directory: my-example
     steps:
     - name: cache binder build on mybinder.org
       uses: jupyterhub/repo2docker-action@master
-      working-directory: my-example
       with:
         NO_PUSH: true
