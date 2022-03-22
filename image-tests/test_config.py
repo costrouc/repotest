@@ -1,5 +1,11 @@
 import sys
+import shutil
 
 
 def test_path():
-    assert sys.prefix == '/opt/conda/bin'
+    # assume that python path
+    assert sys.prefix == '/srv/conda/envs/notebook'
+
+
+def test_conda():
+    assert shutil.which('conda') is not None
